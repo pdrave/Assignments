@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="ibean1" class="ass01.Role_Q1" factory-method="getobj">
+	</bean>
+
+
+	<bean id="ibean" class="ass02.Average_of_Numbers_Q2">
+
+		<property name="num1" value="58"></property>
+		<property name="num2" value="83"></property>
+		<property name="num3" value="89"></property>
+		<property name="num4" value="77"></property>
+		<property name="num5" value="53"></property>
+
+
+
+	</bean>
+
+
+
+
+
+	<bean id="ibean3" class="ass03.Emi_Q3">
+		<property name="rate" value="7.7"></property>
+	</bean>
+
+
+
+
+
+	<bean id="objdep" class="ass04.Department">
+
+		<property name="did" value="1"></property>
+		<property name="dname" value="software"></property>
+
+	</bean>
+
+	<bean id="emp" class="ass04.Employee" autowire="byName">
+		<property name="empid" value="1015322"></property>
+		<property name="ename" value="Pooja Drave"></property>
+		<property name="esalary" value="53000"></property>
+	</bean>
+
+
+	<bean id="ibean5" class="ass05.FindMax_Q5">
+		<property name="max">
+			<list>
+				<value>1000</value>
+				<value>2000</value>
+				<value>6907</value>
+				<value>7008</value>
+				<value>9005</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="ibean6" class="ass06.Vowel_Q6"></bean>
+
+
+
+	<bean id="class2bean" class="ass07.Class2">
+		<constructor-arg>
+			<array>
+				<value>1001</value>
+				<value>1002</value>
+				<value>1003</value>
+				<value>1004</value>
+				<value>1005</value>
+			</array>
+		</constructor-arg>
+	</bean>
+
+	<bean id="class1bean" class="ass07.Class7">
+		<constructor-arg>
+			<array>
+				<value>100</value>
+				<value>200</value>
+				<value>300</value>
+				<value>400</value>
+				<value>500</value>
+			</array>
+		</constructor-arg>
+		<constructor-arg ref="class2bean"></constructor-arg>
+	</bean>
+
+<bean id="itembean8" class="ass08.Assi8Item">
+    <constructor-arg >
+    <list>
+    <value>Drone</value>
+    <value>Go-Pro</value>
+    <value>Tripod</value>
+    <value>SD-Card</value>
+    </list>
+    </constructor-arg>
+    </bean>
+
+
+
+
+
+
+
+
+
+
+<bean id="que9a"
+        class="ass09.Dis">
+        <property name="fc" value="mumbai"></property>
+        <property name="tc" value="bangalore"></property>
+        <property name="dis" value="992"></property>
+    </bean>
+
+    <bean id="que9b"
+        class="ass09.Dis">
+        <property name="fc" value="pune"></property>
+        <property name="tc" value="kolhapur"></property>
+        <property name="dis" value="250"></property>
+    </bean>
+
+    <bean id="que9c"
+        class="ass09.Dis">
+        <property name="fc" value="pune"></property>
+        <property name="tc" value="mumbai"></property>
+        <property name="dis" value="150"></property>
+    </bean>
+
+    <bean id="que9d"
+        class="ass09.Dis">
+        <property name="fc" value="indore"></property>
+        <property name="tc" value="pune"></property>
+        <property name="dis" value="590"></property>
+    </bean>
+    
+
+	<bean id="result" class="ass11.Result">
+		<constructor-arg value="76f"></constructor-arg>
+		<constructor-arg value="80f"></constructor-arg>
+		<constructor-arg value="85f"></constructor-arg>
+		<constructor-arg value="88f"></constructor-arg>
+	</bean>
+
+
+	<bean id="stu1" class="ass11.Student">
+		<constructor-arg value="Pooja Drave"></constructor-arg>
+		<constructor-arg value="01"></constructor-arg>
+		<constructor-arg value="12/11/1997"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result" />
+		</constructor-arg>
+	</bean>
+
+<bean class="ass10.Student" id="que10">
+        <property name="std">
+            <map>
+                <entry key="Pooja" value="80" />
+                <entry key="Ashish" value="90" />
+                <entry key="Payal" value="95" />
+                <entry key="Pallav" value="85" />
+            </map>
+        </property>
+
+    </bean>
+
+
+
+
+	<bean id="result1" class="ass11.Result">
+		<constructor-arg value="80f"></constructor-arg>
+		<constructor-arg value="82f"></constructor-arg>
+		<constructor-arg value="89f"></constructor-arg>
+		<constructor-arg value="95f"></constructor-arg>
+	</bean>
+	<bean id="stu2" class="ass11.Student">
+		<constructor-arg value="Payal"></constructor-arg>
+		<constructor-arg value="02"></constructor-arg>
+		<constructor-arg value="15/08/1999"></constructor-arg>
+		<constructor-arg value="10th"></constructor-arg>
+		<constructor-arg value="B"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result1" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="result2" class="ass11.Result">
+		<constructor-arg value="90f"></constructor-arg>
+		<constructor-arg value="94f"></constructor-arg>
+		<constructor-arg value="89f"></constructor-arg>
+		<constructor-arg value="75f"></constructor-arg>
+	</bean>
+	<bean id="stu3" class="ass11.Student">
+		<constructor-arg value="Ashish"></constructor-arg>
+		<constructor-arg value="03"></constructor-arg>
+		<constructor-arg value="12/04/1996"></constructor-arg>
+		<constructor-arg value="First Year"></constructor-arg>
+		<constructor-arg value="a"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result2" />
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="result3" class="ass11.Result">
+		<constructor-arg value="70f"></constructor-arg>
+		<constructor-arg value="82f"></constructor-arg>
+		<constructor-arg value="79f"></constructor-arg>
+		<constructor-arg value="79f"></constructor-arg>
+	</bean>
+	<bean id="stu4" class="ass11.Student">
+		<constructor-arg value="Pallav"></constructor-arg>
+		<constructor-arg value="04"></constructor-arg>
+		<constructor-arg value="19/10/1997"></constructor-arg>
+		<constructor-arg value="10th"></constructor-arg>
+		<constructor-arg value="B"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result3" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="result4" class="ass11.Result">
+		<constructor-arg value="80f"></constructor-arg>
+		<constructor-arg value="92f"></constructor-arg>
+		<constructor-arg value="79f"></constructor-arg>
+		<constructor-arg value="69f"></constructor-arg>
+	</bean>
+	<bean id="stu5" class="ass11.Student">
+		<constructor-arg value="Mitali"></constructor-arg>
+		<constructor-arg value="05"></constructor-arg>
+		<constructor-arg value="09/10/1997"></constructor-arg>
+		<constructor-arg value="10th"></constructor-arg>
+		<constructor-arg value="B"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result4" />
+		</constructor-arg>
+	</bean>
+	
+	
+	
+	
+	
+	<bean id="que12a"
+        class="ass12.Employee">
+        <property name="ename" value="Pooja Drave"></property>
+        <property name="salary" value="30000"></property>
+        <property name="dept" value="Sr.Software Engineer"></property>
+    </bean>
+	  <bean id="que12b"
+        class="ass12.Employee">
+        <property name="ename" value="Payal"></property>
+        <property name="salary" value="32000"></property>
+        <property name="dept" value="Data-Analyst"></property>
+    </bean>
+	
+	  <bean id="que12c"
+        class="ass12.Employee">
+        <property name="ename" value="Ashish"></property>
+        <property name="salary" value="34000"></property>
+        <property name="dept" value="Shift Engineer"></property>
+    </bean>
+	  <bean id="que12d"
+        class="ass12.Employee">
+        <property name="ename" value="Sanjeevani"></property>
+        <property name="salary" value="36000"></property>
+        <property name="dept" value="HRPP"></property>
+    </bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+    
+    <bean id="CustID"
+        class="ass13.Sys">
+        <property name="moviename" value="Kashmir Files"></property>
+        <property name="showtime" value="7-10"></property>  
+        <property name="pot" value="550"></property>
+        <property name="bic" value="100 crore"></property>  
+    </bean>
+    
+    
+    <bean id="que14" class="ass14.Shape_Fac"
+		factory-method="getCircleObject"></bean>
+		<bean id="que14a" class="ass14.Shape_Fac"
+		factory-method="getSquareObject"></bean>
+		<bean id="que14b" class="ass14.Shape_Fac"
+		factory-method="getRectangleObject"></bean>
+		
+	
+	
+	
+		<bean id="Customerid"
+        class="ass15.Cust">
+        <property name="id" value="1"></property>
+        <property name="custname" value="Pooja"></property>  
+        <property name="itm" ref="itemid"/>
+    </bean>
+	 <bean id="itemid"
+        class="ass15.Item">
+        <property name="id" value="2"></property>
+        <property name="iname" value="Lipstick"></property>
+        <property name="price" value="3000"></property>
+        <property name="cat" ref="Catid"/>
+    </bean>
+	<bean id="Catid"
+        class="ass15.Category">
+        
+        <property name="categoryname" value="Cosmetic"></property>  
+    </bean>
+	
+</beans>
